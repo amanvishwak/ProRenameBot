@@ -7,27 +7,27 @@ id_pattern = re.compile(r'^.\d+$')
 
 class Config(object):
     # pyro client config
-    API_ID = os.environ.get("API_ID", "")  # ⚠️ Required
-    API_HASH = os.environ.get("API_HASH", "")  # ⚠️ Required
-    BOT_TOKEN = os.environ.get("BOT_TOKEN", "")  # ⚠️ Required
+    API_ID    = os.environ.get("API_ID", "22182189")
+    API_HASH  = os.environ.get("API_HASH", "5e7c4088f8e23d0ab61e29ae11960bf5")
+    BOT_TOKEN = os.environ.get("BOT_TOKEN", "8182224498:AAG4leCVgBgVEYUmyBzS_N5cK_1OSeRD0mg") 
+   
+    # database config
+    DB_NAME = os.environ.get("DB_NAME","cluster0")     
+    DB_URL  = os.environ.get("DB_URL","mongodb+srv://aman991932:aman@cluster0.18hv15a.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0")
+ 
+    # other configs
+    BOT_UPTIME  = time.time()
+    START_PIC   = os.environ.get("START_PIC", "https://graph.org/file/29a3acbbab9de5f45a5fe.jpg")
+    ADMIN       = [int(admin) if id_pattern.search(admin) else admin for admin in os.environ.get('ADMIN', '5977931010').split()]
+    FORCE_SUB   = os.environ.get("FORCE_SUB", "AV_BOTz_UPDATE") 
+    LOG_CHANNEL = int(os.environ.get("LOG_CHANNEL", "-1002110971750"))
+    BIN_CHANNEL = int(os.environ.get("BIN_CHANNEL", "-1001973960964"))
 
     # premium 4g renaming client
-    STRING_API_ID = os.environ.get("STRING_API_ID", "")
-    STRING_API_HASH = os.environ.get("STRING_API_HASH", "")
+    STRING_API_ID = os.environ.get("STRING_API_ID", "22182189")
+    STRING_API_HASH = os.environ.get("STRING_API_HASH", "5e7c4088f8e23d0ab61e29ae11960bf5")
     STRING_SESSION = os.environ.get("STRING_SESSION", "")
 
-    # database config
-    DB_NAME = os.environ.get("DB_NAME", "Cluster0")
-    DB_URL = os.environ.get("DB_URL", "")  # ⚠️ Required
-
-    # other configs
-    BOT_UPTIME = time.time()
-    START_PIC = os.environ.get("START_PIC", "")
-    ADMIN = [int(admin) if id_pattern.search(
-        admin) else admin for admin in os.environ.get('ADMIN', '').split()]  # ⚠️ Required
-    
-    FORCE_SUB = os.environ.get("FORCE_SUB", "") # ⚠️ Required Username without @
-    LOG_CHANNEL = int(os.environ.get("LOG_CHANNEL", ""))  # ⚠️ Required
     FLOOD = int(os.environ.get("FLOOD", '10'))
     BANNED_USERS = set(int(x) for x in os.environ.get(
         "BANNED_USERS", "1234567890").split())
